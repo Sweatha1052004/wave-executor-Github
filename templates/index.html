@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Analysis Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color:#000106;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2.5em;
+            color: #F4E9F3;
+
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-top: 30px;
+            height: 50%;
+        }
+        .column {
+            width: 45%;
+            height:70%;
+            margin: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #F4E9F3;
+        }
+        .column button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #461bd2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .column button:hover {
+            background-color: #000000;
+        }
+        .upload-preview, .predict-output {
+            width: 100%;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .upload-preview img, .upload-preview video, 
+        .predict-output img, .predict-output video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        video {
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Football Analysis Detection</h1>
+
+    <div class="container">
+        <!-- Left Column -->
+        <div class="column">
+            <form id="uploadForm" action="/detect" method="post" enctype="multipart/form-data">
+                <button type="button" onclick="document.getElementById('fileInput').click();">Upload</button>
+                <input id="fileInput" type="file" name="file" accept="image/,video/" style="display: none;" onchange="previewFile()">
+                <div class="upload-preview" id="uploadPreview">
+                    {% if uploaded_file %}
+                        {% if file_type == 'image' %}
+                            <img src="{{ uploaded_file }}" alt="Uploaded Image">
+                        {% elif file_type == 'video' %}
+                            <video controls>
+                                <source src="{{ uploaded_file }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column">
+            <button type="submit" form="uploadForm">Predict</button>
+            <div class="predict-output" id="predictOutput">
+                {% if processed_file %}
+                    {% if file_type == 'image' %}
+                        <img src="{{ processed_file }}" alt="Processed Image">
+                    {% elif file_type == 'video' %}
+                        <video controls>
+                            <source src="{{ processed_file }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function previewFile() {
+            const fileInput = document.getElementById('fileInput');
+            const preview = document.getElementById('uploadPreview');
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+
+            reader.onloadend = function () {
+                if (file.type.startsWith('image/')) {
+                    preview.innerHTML = <img src="${reader.result}" alt="Uploaded Image">;
+                } else if (file.type.startsWith('video/')) {
+                    preview.innerHTML = <video controls><source src="${reader.result}" type="${file.type}">Your browser does not support the video tag.</video>;
+                }
+            };
+        }
+    </script>
+</body>
+</html>
